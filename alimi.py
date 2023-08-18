@@ -2,7 +2,7 @@ import discord
 import asyncio
 from discord.ext import commands, tasks
 from datetime import datetime, time, timedelta
-import security
+from security import security
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -15,7 +15,7 @@ async def on_ready():
 @tasks.loop(hours=24)  # 매일 24시간마다 작업 실행
 async def create_thread():
     now = datetime.now()
-    target_time = time(15, 9, 0)  # 오전 9시
+    target_time = time(13, 19, 0)  # 오전 9시
 
     # 매일 오전 9시에 스레드 생성
     if now.time() >= target_time:
